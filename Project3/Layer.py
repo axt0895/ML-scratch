@@ -1,12 +1,12 @@
-import numpy as np
-
 class Layer:
 
     def __init__(self):
-        pass
+        self.weights = None
+        self.bias = None
+        self.gradients = None
 
-    def forward(self, X):
-        pass
+    def forward(self, inputs):
+        raise NotImplementedError
 
-    def backward(self, X, y, output):
-       pass
+    def backward(self, gradients):
+        raise NotImplementedError
