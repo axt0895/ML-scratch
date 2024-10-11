@@ -1,6 +1,12 @@
-class Layer:
-    def forward(self, X, weights, bias):
-        X = X @ weights + bias
+import numpy as np
 
-    def backward(self):
+class Layer:
+
+    def __init__(self):
         pass
+
+    def forward(self, X):
+        pass
+
+    def backward(self, X, y, output):
+       pass
