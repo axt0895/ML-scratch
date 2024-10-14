@@ -6,14 +6,14 @@ from Layer import Layer
 class Sigmoid(Layer):
     def __init__(self):
         super().__init__()
-        self.inputs = None
+        self.input = None
         self.output = None
 
-    def forward(self, inputs):
-        self.inputs = inputs
-        self.output = 1 / (1 + np.exp(-self.inputs) + 1e-10)
+    def forward(self, input):
+        self.input = input
+        self.output = 1 / (1 + np.exp(-self.input) + 1e-10)
         return self.output
 
-    def backward(self, gradients):
+    def backward(self, output_gradients, learning_rate = 0.001):
         sigmoid = self.output
-        return gradients * sigmoid * (1 - sigmoid)
+        return output_gradients * sigmoid * (1 - sigmoid)

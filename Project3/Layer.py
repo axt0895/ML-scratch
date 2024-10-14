@@ -5,7 +5,7 @@ class Layer:
         self.bias = None
         self.gradients = None
 
-    def forward(self, inputs):
+    def forward(self, input):
         raise NotImplementedError
 
     def backward(self, gradients):

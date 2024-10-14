@@ -1,11 +1,16 @@
 import numpy as np
-
 from Layer import Layer
 
+
 class ReLU(Layer):
-    def forward(self, inputs):
-        self.inputs = inputs
-        return np.maximum(0, inputs)
+
+    def __init__(self):
+        super().__init__()
+        self.input = input
+
+    def forward(self, input):
+        self.input = input
+        return np.maximum(0, input)
 
     def backward(self, gradients):
-        return gradients * (self.inputs > 0)
+        return gradients * (self.input > 0)
