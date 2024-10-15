@@ -1,8 +1,9 @@
+# Imports
 import numpy as np
-
 from Layer import Layer
 
 
+# Implementation of Sigmoid Activation Layer
 class Sigmoid(Layer):
     def __init__(self):
         super().__init__()
