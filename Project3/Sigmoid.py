@@ -15,6 +15,6 @@ class Sigmoid(Layer):
         self.output = 1 / (1 + np.exp(-self.input) + 1e-10)
         return self.output
 
-    def backward(self, output_gradients, learning_rate = 0.001):
+    def backward(self, output_gradients, learning_rate = 0.01):
         sigmoid = self.output
         return output_gradients * sigmoid * (1 - sigmoid)

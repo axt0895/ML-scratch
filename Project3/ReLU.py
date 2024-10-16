@@ -13,5 +13,5 @@ class ReLU(Layer):
         self.input = input
         return np.maximum(0, input)
 
-    def backward(self, gradients: np.ndarray) -> np.ndarray:
+    def backward(self, gradients: np.ndarray, learning_rate = None) -> np.ndarray:
         return gradients * (self.input > 0)
