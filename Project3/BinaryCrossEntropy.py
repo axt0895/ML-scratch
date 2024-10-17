@@ -21,4 +21,5 @@ class BinaryCrossEntropy(Layer):
     def backward(self, output_gradients = 1):
         batch_size = self.targets.shape[0]
         gradients = (self.predictions - self.targets) / (self.predictions * (1 - self.predictions))
+        gradients = gradients.reshape(self.predictions.shape)
         return output_gradients / batch_size * gradients
